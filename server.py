@@ -3,10 +3,10 @@ from utils.api import api_response, api_res_type
 
 import json
 
-with open("stubs/products.json") as myfile:
-    data = myfile.read()
+with open("stubs/products.json") as products_stub:
+    products_json = products_stub.read()
 
-obj = json.loads(data)
+products = json.loads(products_json)
 
 app = Flask(__name__)
 
@@ -14,5 +14,5 @@ app = Flask(__name__)
 def hello():
     return api_response(
         api_res_type["success"],
-        obj,
+        products,
     )
