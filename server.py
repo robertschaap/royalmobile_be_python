@@ -16,9 +16,3 @@ def hello():
         api_res_type["success"],
         obj,
     )
-
-@app.route("/api/smth", methods=["GET"])
-def getSmth():
-    return api_response(
-        api_res_type["success"],
-    )
