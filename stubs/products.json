@@ -2,115 +2,195 @@
   {
     "id": 1,
     "manufacturer": "Apple",
-    "model": "iPhone X",
-    "modelId": "apple-iphonex",
+    "model": "iPhone X1",
+    "modelId": "apple-iphonex1",
     "variants": [
       {
         "id": 1,
-        "variantId": "apple-iphonex-16gb-silver",
-        "color": "silver",
-        "colorHex": "#ccc",
+        "variantId": "apple-iphonex1-16gb-lime",
+        "color": "lime",
+        "colorHex": "#7ec09a",
         "capacity": "16gb",
         "is_in_stock": true,
         "is_preorder": true,
         "regular_price": "265",
         "discounted_price": "239",
         "has_discounts": true
-      }
-    ]
-  },
-  {
-    "id": 2,
-    "manufacturer": "Apple",
-    "model": "iPhone X",
-    "modelId": "apple-iphonex",
-    "variants": [
+      },
       {
-        "id": 1,
-        "variantId": "apple-iphonex-16gb-silver",
-        "color": "silver",
-        "colorHex": "#ccc",
+        "id": 2,
+        "variantId": "apple-iphonex1-16gb-purple",
+        "color": "purple",
+        "colorHex": "#8097c2",
         "capacity": "16gb",
         "is_in_stock": true,
         "is_preorder": true,
         "regular_price": "265",
         "discounted_price": "239",
         "has_discounts": true
-      }
-    ]
-  },
-  {
-    "id": 3,
-    "manufacturer": "Apple",
-    "model": "iPhone X",
-    "modelId": "apple-iphonex",
-    "variants": [
+      },
       {
-        "id": 1,
-        "variantId": "apple-iphonex-16gb-silver",
-        "color": "silver",
-        "colorHex": "#ccc",
+        "id": 3,
+        "variantId": "apple-iphonex1-16gb-green",
+        "color": "green",
+        "colorHex": "#bae596",
         "capacity": "16gb",
         "is_in_stock": true,
         "is_preorder": true,
         "regular_price": "265",
         "discounted_price": "239",
         "has_discounts": true
-      }
-    ]
-  },
-  {
-    "id": 4,
-    "manufacturer": "Apple",
-    "model": "iPhone X",
-    "modelId": "apple-iphonex",
-    "variants": [
+      },
       {
-        "id": 1,
-        "variantId": "apple-iphonex-16gb-silver",
-        "color": "silver",
-        "colorHex": "#ccc",
+        "id": 4,
+        "variantId": "apple-iphonex1-16gb-pink",
+        "color": "pink",
+        "colorHex": "#d59a8d",
         "capacity": "16gb",
         "is_in_stock": true,
         "is_preorder": true,
         "regular_price": "265",
         "discounted_price": "239",
         "has_discounts": true
-      }
-    ]
-  },
-  {
-    "id": 5,
-    "manufacturer": "Apple",
-    "model": "iPhone X",
-    "modelId": "apple-iphonex",
-    "variants": [
+      },
       {
-        "id": 1,
-        "variantId": "apple-iphonex-16gb-silver",
-        "color": "silver",
-        "colorHex": "#ccc",
-        "capacity": "16gb",
+        "id": 5,
+        "variantId": "apple-iphonex1-32gb-lime",
+        "color": "lime",
+        "colorHex": "#7ec09a",
+        "capacity": "32gb",
         "is_in_stock": true,
         "is_preorder": true,
         "regular_price": "265",
         "discounted_price": "239",
         "has_discounts": true
-      }
-    ]
-  },
-  {
-    "id": 6,
-    "manufacturer": "Apple",
-    "model": "iPhone X",
-    "modelId": "apple-iphonex",
-    "variants": [
+      },
       {
-        "id": 1,
-        "variantId": "apple-iphonex-16gb-silver",
-        "color": "silver",
-        "colorHex": "#ccc",
-        "capacity": "16gb",
+        "id": 6,
+        "variantId": "apple-iphonex1-32gb-purple",
+        "color": "purple",
+        "colorHex": "#8097c2",
+        "capacity": "32gb",
+        "is_in_stock": true,
+        "is_preorder": true,
+        "regular_price": "265",
+        "discounted_price": "239",
+        "has_discounts": true
+      },
+      {
+        "id": 7,
+        "variantId": "apple-iphonex1-32gb-green",
+        "color": "green",
+        "colorHex": "#bae596",
+        "capacity": "32gb",
+        "is_in_stock": true,
+        "is_preorder": true,
+        "regular_price": "265",
+        "discounted_price": "239",
+        "has_discounts": true
+      },
+      {
+        "id": 8,
+        "variantId": "apple-iphonex1-32gb-pink",
+        "color": "pink",
+        "colorHex": "#d59a8d",
+        "capacity": "32gb",
+        "is_in_stock": true,
+        "is_preorder": true,
+        "regular_price": "265",
+        "discounted_price": "239",
+        "has_discounts": true
+      },
+      {
+        "id": 9,
+        "variantId": "apple-iphonex1-64gb-lime",
+        "color": "lime",
+        "colorHex": "#7ec09a",
+        "capacity": "64gb",
+        "is_in_stock": true,
+        "is_preorder": true,
+        "regular_price": "265",
+        "discounted_price": "239",
+        "has_discounts": true
+      },
+      {
+        "id": 10,
+        "variantId": "apple-iphonex1-64gb-purple",
+        "color": "purple",
+        "colorHex": "#8097c2",
+        "capacity": "64gb",
+        "is_in_stock": true,
+        "is_preorder": true,
+        "regular_price": "265",
+        "discounted_price": "239",
+        "has_discounts": true
+      },
+      {
+        "id": 11,
+        "variantId": "apple-iphonex1-64gb-green",
+        "color": "green",
+        "colorHex": "#bae596",
+        "capacity": "64gb",
+        "is_in_stock": true,
+        "is_preorder": true,
+        "regular_price": "265",
+        "discounted_price": "239",
+        "has_discounts": true
+      },
+      {
+        "id": 12,
+        "variantId": "apple-iphonex1-64gb-pink",
+        "color": "pink",
+        "colorHex": "#d59a8d",
+        "capacity": "64gb",
+        "is_in_stock": true,
+        "is_preorder": true,
+        "regular_price": "265",
+        "discounted_price": "239",
+        "has_discounts": true
+      },
+      {
+        "id": 13,
+        "variantId": "apple-iphonex1-128gb-lime",
+        "color": "lime",
+        "colorHex": "#7ec09a",
+        "capacity": "128gb",
+        "is_in_stock": true,
+        "is_preorder": true,
+        "regular_price": "265",
+        "discounted_price": "239",
+        "has_discounts": true
+      },
+      {
+        "id": 14,
+        "variantId": "apple-iphonex1-128gb-purple",
+        "color": "purple",
+        "colorHex": "#8097c2",
+        "capacity": "128gb",
+        "is_in_stock": true,
+        "is_preorder": true,
+        "regular_price": "265",
+        "discounted_price": "239",
+        "has_discounts": true
+      },
+      {
+        "id": 15,
+        "variantId": "apple-iphonex1-128gb-green",
+        "color": "green",
+        "colorHex": "#bae596",
+        "capacity": "128gb",
+        "is_in_stock": true,
+        "is_preorder": true,
+        "regular_price": "265",
+        "discounted_price": "239",
+        "has_discounts": true
+      },
+      {
+        "id": 16,
+        "variantId": "apple-iphonex1-128gb-pink",
+        "color": "pink",
+        "colorHex": "#d59a8d",
+        "capacity": "128gb",
         "is_in_stock": true,
         "is_preorder": true,
         "regular_price": "265",
