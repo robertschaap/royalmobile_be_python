@@ -7,4 +7,8 @@ app.register_blueprint(products_controller)
 
 @app.route("/api/")
 def hello():
-    return get_products()
+    return api_response(
+        api_res_type["success"],
+        "Hello World!",
+        "Hello World!",
+    )
