@@ -10,7 +10,7 @@ def create_products_stub(products):
     import json
 
     with open("stubs/products.json", 'w') as f:
-        json.dump(products, f)
+        json.dump(products, f, indent=2)
 
 def get_subscriptions_stub():
     import json
