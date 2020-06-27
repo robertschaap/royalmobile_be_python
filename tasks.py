@@ -11,3 +11,7 @@ def start(c):
         port = port,
         debug = int(debug),
     ))
+
+@task
+def buildstubs(c):
+    c.run("python3 build_stubs.py")
