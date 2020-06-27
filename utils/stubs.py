@@ -6,6 +6,12 @@ def get_products_stub():
 
     return products_json
 
+def create_products_stub(products):
+    import json
+
+    with open("stubs/products.json", 'w') as f:
+        json.dump(products, f)
+
 def get_subscriptions_stub():
     import json
 
