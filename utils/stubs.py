@@ -19,3 +19,9 @@ def get_subscriptions_stub():
         subscriptions_json = subscriptions_stub.read()
 
     return json.loads(subscriptions_json)
+
+def create_subscriptions_stub(subscriptions):
+    import json
+
+    with open("stubs/subscriptions.json", 'w') as f:
+        json.dump(subscriptions, f, indent=2)
