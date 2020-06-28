@@ -1,15 +1,18 @@
 from flask import jsonify
 
-api_res_type = {
-    "success": "success",
-    "error": "error",
-}
+class ApiResponse():
+    @classmethod
+    def success(self, data):
+        return jsonify({
+            'status': "success",
+            'data': data,
+            'message': None,
+        })
 
-def api_response(status, data=None, message=None):
-    response = {
-        "status": status if status else api_res_type["success"],
-        "data": data,
-        "message": message,
-    }
-
-    return jsonify(response)
+    @classmethod
+    def error(self, message):
+        return jsonify({
+            'status': "error",
+            'data': None,
+            'message': message,
+        })

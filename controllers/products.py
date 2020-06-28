@@ -1,6 +1,6 @@
 from flask import Blueprint
 from models.products import ProductsModel
-from utils.api import api_response, api_res_type
+from utils.api import ApiResponse
 
 products_controller = Blueprint('products_controller', __name__)
 products_model = ProductsModel()
@@ -8,13 +8,7 @@ products_model = ProductsModel()
 @products_controller.route('/api/products')
 def get_products():
     try:
-        return api_response(
-            api_res_type["success"],
-            products_model.get_products(),
-        )
+        products = products_model.get_products()
+        return ApiResponse.success(products)
     except:
-        return api_response(
-            api_res_type["error"],
-            None,
-            "error message"
-        )
+        return ApiResponse.error("Products could not be found")
