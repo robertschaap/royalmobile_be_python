@@ -7,7 +7,14 @@ products_model = ProductsModel()
 
 @products_controller.route('/api/products')
 def get_products():
-    return api_response(
-        api_res_type["success"],
-        products_model.get_products(),
-    )
+    try:
+        return api_response(
+            api_res_type["success"],
+            products_model.get_products(),
+        )
+    except:
+        return api_response(
+            api_res_type["error"],
+            None,
+            "error message"
+        )
