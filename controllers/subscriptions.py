@@ -1,13 +1,14 @@
 from flask import Blueprint
 from utils.api import ApiResponse
-from utils.stubs import get_subscriptions_stub
+from models.subscriptions import SubscriptionsModel
 
 subscriptions_controller = Blueprint('subscriptions_controller', __name__)
+subscriptions_model = SubscriptionsModel()
 
 @subscriptions_controller.route('/api/subscriptions')
 def get_subscriptions():
     try:
-        subscriptions = get_subscriptions_stub()
+        subscriptions = subscriptions_model.get_subscriptions()
         return ApiResponse.success(subscriptions)
     except:
         return ApiResponse.error("Subscriptions could not be found")
