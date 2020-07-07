@@ -2,7 +2,7 @@
   {
     "id": 1,
     "manufacturer": "Apple",
-    "model": "iPhoneX1",
+    "model": "iPhone X1",
     "modelId": "apple-iphonex1",
     "variants": [
       {
@@ -202,7 +202,7 @@
   {
     "id": 2,
     "manufacturer": "Apple",
-    "model": "iPhoneX2",
+    "model": "iPhone X2",
     "modelId": "apple-iphonex2",
     "variants": [
       {
@@ -402,7 +402,7 @@
   {
     "id": 3,
     "manufacturer": "Apple",
-    "model": "iPhoneX3",
+    "model": "iPhone X3",
     "modelId": "apple-iphonex3",
     "variants": [
       {
@@ -602,7 +602,7 @@
   {
     "id": 4,
     "manufacturer": "Apple",
-    "model": "iPhoneX4",
+    "model": "iPhone X4",
     "modelId": "apple-iphonex4",
     "variants": [
       {
@@ -802,7 +802,7 @@
   {
     "id": 5,
     "manufacturer": "Apple",
-    "model": "iPhoneX5",
+    "model": "iPhone X5",
     "modelId": "apple-iphonex5",
     "variants": [
       {
@@ -1002,7 +1002,7 @@
   {
     "id": 6,
     "manufacturer": "Apple",
-    "model": "iPhoneX6",
+    "model": "iPhone X6",
     "modelId": "apple-iphonex6",
     "variants": [
       {
