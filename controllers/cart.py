@@ -41,7 +41,20 @@ def patch_cart_item():
 
 @cart_controller.route('/api/cart/<id>/item/<item_id>', methods=["DELETE"])
 def delete_cart_item():
-    return ApiResponse.error('Cart item could not be deleted')
+    try:
+        cart = {
+            'id': "cart-id",
+            'items': [],
+            'totals': {
+                'monthly_price': "",
+                'onetime_price': "",
+            }
+
+        }
+
+        return ApiResponse.success(cart)
+    except:
+        return ApiResponse.error('Cart item could not be deleted')
 
 @cart_controller.route('/api/cart/order', methods=["POST"])
 def post_cart_order():
