@@ -24,7 +24,20 @@ def get_cart():
 def patch_cart_item():
     # try to call a create cart route if no cart ID
     # then try to add a product
-    return ApiResponse.error('Cart item could not be added')
+    try:
+        cart = {
+            'id': "cart-id",
+            'items': [],
+            'totals': {
+                'monthly_price': "",
+                'onetime_price': "",
+            }
+
+        }
+
+        return ApiResponse.success(cart)
+    except:
+        return ApiResponse.error('Cart item could not be added')
 
 @cart_controller.route('/api/cart/<id>/item/<item_id>', methods=["DELETE"])
 def delete_cart_item():
