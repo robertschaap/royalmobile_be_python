@@ -5,7 +5,20 @@ cart_controller = Blueprint('cart_controller', __name__)
 
 @cart_controller.route('/api/cart/<id>')
 def get_cart():
-    return ApiResponse.error('Cart could not be found')
+    try:
+        cart = {
+            'id': "cart-id",
+            'items': [],
+            'totals': {
+                'monthly_price': "",
+                'onetime_price': "",
+            }
+
+        }
+
+        return ApiResponse.success(cart)
+    except:
+        return ApiResponse.error('Cart could not be found')
 
 @cart_controller.route('/api/cart/<id>/item', methods=["PATCH"])
 def patch_cart_item():
