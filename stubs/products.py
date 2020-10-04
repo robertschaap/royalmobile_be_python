@@ -2,14 +2,14 @@ class ProductFactory():
     __id = 0
 
     @classmethod
-    def __get_id(self):
-        self.__id += 1
-        return self.__id
+    def __get_id(cls):
+        cls.__id += 1
+        return cls.__id
 
     @classmethod
-    def create(self, manufacturer, model, model_id):
+    def create(cls, manufacturer, model, model_id):
         return {
-            'id': self.__get_id(),
+            'id': cls.__get_id(),
             'manufacturer': manufacturer,
             'model': model,
             'modelId': model_id,
@@ -21,14 +21,14 @@ class ProductVariantFactory():
     __id = 0
 
     @classmethod
-    def __get_id(self):
-        self.__id += 1
-        return self.__id
+    def __get_id(cls):
+        cls.__id += 1
+        return cls.__id
 
     @classmethod
-    def create(self, model_id, color, color_hex, capacity):
+    def create(cls, model_id, color, color_hex, capacity):
         return {
-            'id': self.__get_id(),
+            'id': cls.__get_id(),
             'variantId': model_id + "-" + capacity + "-" + color,
             'color': color,
             'colorHex': color_hex,
