@@ -2,14 +2,14 @@ class SubscriptionFactory():
     __id = 0
 
     @classmethod
-    def __get_id(self):
-        self.__id += 1
-        return self.__id
+    def __get_id(cls):
+        cls.__id += 1
+        return cls.__id
 
     @classmethod
-    def create(self, capacity, duration, price):
+    def create(cls, capacity, duration, price):
         return {
-            'id': self.__get_id(),
+            'id': cls.__get_id(),
             'subscriptionId': "royalmobile-" + capacity + "-" + duration,
             'durationId': duration,
             'data': capacity,
