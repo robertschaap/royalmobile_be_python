@@ -1,24 +1,17 @@
 from flask import Blueprint
 from utils.api import ApiResponse
+from models.cart import CartModel
 
 cart_controller = Blueprint('cart_controller', __name__)
+cart_model = CartModel()
 
 @cart_controller.route('/api/cart/<id>')
-def get_cart():
+def get_cart(id):
     try:
-        cart = {
-            'id': "cart-id",
-            'items': [],
-            'totals': {
-                'monthly_price': "",
-                'onetime_price': "",
-            }
-
-        }
-
+        cart = cart_model.get_card_by_id(id)
         return ApiResponse.success(cart)
     except:
-        return ApiResponse.error('Cart could not be found')
+        return ApiResponse.error('Could not get cart')
 
 @cart_controller.route('/api/cart/<id>/item', methods=["PATCH"])
 def patch_cart_item():
