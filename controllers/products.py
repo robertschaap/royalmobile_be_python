@@ -10,5 +10,3 @@ def get_products():
     try:
         products = products_model.get_products()
         return ApiResponse.success(products)
-    except:
-        return ApiResponse.error("Products could not be found")
