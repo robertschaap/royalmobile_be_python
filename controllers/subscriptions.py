@@ -7,8 +7,5 @@ subscriptions_model = SubscriptionsModel()
 
 @subscriptions_controller.route('/api/subscriptions')
 def get_subscriptions():
-    try:
         subscriptions = subscriptions_model.get_subscriptions()
         return ApiResponse.success(subscriptions)
-    except:
-        return ApiResponse.error("Subscriptions could not be found")
