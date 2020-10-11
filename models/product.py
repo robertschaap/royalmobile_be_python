@@ -1,11 +1,11 @@
 from utils.stubs import get_products_stub
+from db.connection import Connection
 
 class ProductModel:
-    def get_product(self, product_id):
-        products_stub = get_products_stub() or []
-        product = [x for x in products_stub if x["modelId"] == product_id]
+    def get_product(self, id):
+        product = Connection.products.get_product_by_model_id(id)
 
-        if len(product) != 0:
-            return product[0]
+        if product != None:
+            return product
 
         raise ValueError("Product could not be found")
