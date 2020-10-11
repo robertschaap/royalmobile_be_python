@@ -1,4 +1,4 @@
-from flask import Blueprint
+from flask import Blueprint, request
 from utils.api import ApiResponse
 from models.cart import CartModel
 
@@ -49,10 +49,11 @@ def delete_cart_item():
 
 @cart_controller.route('/api/cart/order', methods=["POST"])
 def post_order():
+    cart_id = request.values.get('cartId')
+    result = cart_model.post_order(cart_id)
 
-    # TODO: add post order from card model
-    if True:
+    if result == True:
         # TODO: check this, its similar to the Java version but why return the id though?
-        return ApiResponse.success('cartId')
+        return ApiResponse.success(cart_id)
 
     return ApiResponse.error('Could not post order')
