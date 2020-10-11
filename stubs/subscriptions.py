@@ -22,7 +22,7 @@ class SubscriptionFactory():
             'regular_price': price
         }
 
-def get_subscriptions():
+def create_subscriptions():
     subscriptions = []
 
     subscriptions.append(SubscriptionFactory.create("20gb", "1year", "20"))

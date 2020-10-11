@@ -41,7 +41,7 @@ class ProductVariantFactory():
         }
 
 
-def get_product(manufacturer, model, model_id):
+def create_product(manufacturer, model, model_id):
     product = ProductFactory.create(manufacturer, model, model_id)
 
     product['variants'].append(ProductVariantFactory.create(product['modelId'], 'lime', '#7ec09a', '16gb'))
@@ -66,14 +66,14 @@ def get_product(manufacturer, model, model_id):
 
     return product
 
-def get_products():
+def create_products():
     products = []
 
-    products.append(get_product('Apple', 'iPhone X1', 'apple-iphonex1'))
-    products.append(get_product('Apple', 'iPhone X2', 'apple-iphonex2'))
-    products.append(get_product('Apple', 'iPhone X3', 'apple-iphonex3'))
-    products.append(get_product('Apple', 'iPhone X4', 'apple-iphonex4'))
-    products.append(get_product('Apple', 'iPhone X5', 'apple-iphonex5'))
-    products.append(get_product('Apple', 'iPhone X6', 'apple-iphonex6'))
+    products.append(create_product('Apple', 'iPhone X1', 'apple-iphonex1'))
+    products.append(create_product('Apple', 'iPhone X2', 'apple-iphonex2'))
+    products.append(create_product('Apple', 'iPhone X3', 'apple-iphonex3'))
+    products.append(create_product('Apple', 'iPhone X4', 'apple-iphonex4'))
+    products.append(create_product('Apple', 'iPhone X5', 'apple-iphonex5'))
+    products.append(create_product('Apple', 'iPhone X6', 'apple-iphonex6'))
 
     return products
