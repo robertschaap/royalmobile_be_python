@@ -7,6 +7,5 @@ products_model = ProductsModel()
 
 @products_controller.route('/api/products')
 def get_products():
-    try:
-        products = products_model.get_products()
-        return ApiResponse.success(products)
+    products = products_model.get_products()
+    return ApiResponse.success(products)
