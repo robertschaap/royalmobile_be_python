@@ -7,5 +7,5 @@ subscriptions_model = SubscriptionsModel()
 
 @subscriptions_controller.route('/api/subscriptions')
 def get_subscriptions():
-        subscriptions = subscriptions_model.get_subscriptions()
-        return ApiResponse.success(subscriptions)
+    subscriptions = subscriptions_model.get_subscriptions()
+    return ApiResponse.success(subscriptions)
