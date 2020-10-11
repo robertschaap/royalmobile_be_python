@@ -1,4 +1,4 @@
-from db.connection import Connection
+from db import Connection
 
 class CartModel:
     def get_cart_by_id(self, id):

@@ -1,5 +1,5 @@
 from utils.stubs import get_products_stub
-from db.connection import Connection
+from db import Connection
 
 class ProductModel:
     def get_product(self, id):
