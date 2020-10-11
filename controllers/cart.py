@@ -8,7 +8,7 @@ cart_model = CartModel()
 @cart_controller.route('/api/cart/<id>')
 def get_cart(id):
     try:
-        cart = cart_model.get_card_by_id(id)
+        cart = cart_model.get_cart_by_id(id)
         return ApiResponse.success(cart)
     except:
         return ApiResponse.error('Could not get cart')
