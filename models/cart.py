@@ -10,7 +10,7 @@ class CartModel:
         raise ValueError("Cart could not be found")
 
     def create_cart(self):
-        return Connection.carts.get_cart_by_id("new-cart")
+        return Connection.carts.create_cart()
 
     def post_order(self, cart_id):
         # TODO; implement properly once FE is ready for it

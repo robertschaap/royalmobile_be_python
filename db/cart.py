@@ -1,3 +1,5 @@
+import uuid
+
 test_cart = {
     'id': "new-cart",
     'items': [],
@@ -15,3 +17,13 @@ class Cart:
 
     def get_cart_by_id(self, id):
         return next((x for x in self.carts if x["id"] == id), None)
+
+    def create_cart(self):
+        self.carts.append({
+            'id': uuid.uuid4(),
+            'items': [],
+            'totals': {
+                'monthly_price': "",
+                'onetime_price': "",
+            }
+        })
