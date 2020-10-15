@@ -13,8 +13,8 @@ class Cart:
             }
         })
 
-    def get_cart_by_id(self, id):
-        return next((x for x in self.carts if x["id"] == id), None)
+    def get_cart_by_id(self, cart_id):
+        return next((x for x in self.carts if x["id"] == cart_id), None)
 
     def create_cart(self):
         self.carts.append({
