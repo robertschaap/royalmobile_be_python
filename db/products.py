@@ -5,6 +5,6 @@ class Products:
         return get_products_stub() or []
 
     def get_product_by_model_id(self, model_id):
-        products = get_products_stub() or []
+        products = self.get_products()
 
         return next((x for x in products if x['modelId'] == model_id), None)
