@@ -5,6 +5,5 @@ class Subscriptions:
         return get_subscriptions_stub() or []
 
     def get_subscription_by_id(self, subscription_id):
-        subscriptions = get_subscriptions_stub or []
-
+        subscriptions = self.get_subscriptions()
         return next((x for x in subscriptions if x["subscriptionId"] == subscription_id), None)
