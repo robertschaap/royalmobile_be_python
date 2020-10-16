@@ -25,3 +25,16 @@ class Cart:
                 'onetime_price': "",
             }
         })
+
+    def add_cart_item(self, cart_id, cart_item):
+        index = next((i for i, x in enumerate(self.carts) if x["id"] == cart_id), None)
+
+        if index != None:
+            cart = self.carts.pop(index)
+            cart["items"].append(cart_item)
+
+            self.carts.append(cart)
+
+            return cart
+
+        return None
