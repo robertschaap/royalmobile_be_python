@@ -35,6 +35,7 @@ class Cart:
 
         if index != None:
             cart = self.carts.pop(index)
+            cart_item["id"] = uuid4()
             cart["items"].append(cart_item)
 
             self.carts.append(cart)

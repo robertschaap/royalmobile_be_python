@@ -1,4 +1,5 @@
 from db import Connection
+from uuid import uuid4
 
 class CartModel:
     def get_cart_by_id(self, cart_id):
@@ -23,7 +24,6 @@ class CartModel:
             raise ValueError("Could not add cart item")
 
         updated_cart = Connection.carts.add_cart_item(cart_id, {
-            'id': 'a_uuid',
             'product': product,
             'subscription': subscription,
             'totals': None,
