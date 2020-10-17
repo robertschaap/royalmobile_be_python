@@ -13,20 +13,12 @@ def get_cart(id):
         return ApiResponse.error('Could not get cart')
 
 @cart_controller.route('/api/cart/<id>/item', methods=["PATCH"])
-def add_cart_item():
-    # try to call a create cart route if no cart ID
-    # then try to add a product
-    try:
-        cart = {
-            'id': "cart-id",
-            'items': [],
-            'totals': {
-                'monthly_price': "",
-                'onetime_price': "",
-            }
-        }
+def add_cart_item(id):
+    variant_id = request.values.get('variantId')
+    subscription_id = request.values.get('subscriptionId')
 
-        return ApiResponse.success(cart)
+    try:
+        return ApiResponse.success(cart_model.add_cart_item(id, variant_id, subscription_id))
     except:
         return ApiResponse.error('Could not add cart item')
 
