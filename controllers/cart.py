@@ -31,18 +31,10 @@ def add_cart_item():
         return ApiResponse.error('Could not add cart item')
 
 @cart_controller.route('/api/cart/<id>/item/<item_id>', methods=["DELETE"])
-def delete_cart_item():
+def delete_cart_item(id, item_id):
     try:
-        cart = {
-            'id': "cart-id",
-            'items': [],
-            'totals': {
-                'monthly_price': "",
-                'onetime_price': "",
-            }
-        }
-
-        return ApiResponse.success(cart)
+        cart = cart_model.delete_cart_item(id, item_id)
+        return ApiResponse.success(cart_model.delete_cart_item(id, item_id))
     except:
         return ApiResponse.error('Could not delete cart item')
 

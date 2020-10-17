@@ -34,6 +34,9 @@ class CartModel:
 
         return updated_cart
 
+    def delete_cart_item(self, cart_id, item_id):
+        updated_cart = Connection.carts.delete_cart_item(cart_id, item_id)
+
     def post_order(self, cart_id):
         # TODO; implement properly once FE is ready for it
         return True
