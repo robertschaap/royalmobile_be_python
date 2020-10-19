@@ -2,6 +2,7 @@ from flask import Blueprint, request
 from utils.api import ApiResponse
 from models.cart import CartModel
 
+# TODO: figure out if we can add some sort of error handler
 cart_controller = Blueprint('cart_controller', __name__)
 cart_model = CartModel()
 
