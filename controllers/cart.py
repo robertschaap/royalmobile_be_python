@@ -15,8 +15,9 @@ def get_cart(id):
 
 @cart_controller.route('/api/cart/<id>/item', methods=["PATCH"])
 def add_cart_item(id):
-    variant_id = request.values.get('variantId')
-    subscription_id = request.values.get('subscriptionId')
+    data = request.form or request.get_json(force=True)
+    variant_id = data.get('variantId')
+    subscription_id = data.get('subscriptionId')
 
     try:
         return ApiResponse.success(cart_model.add_cart_item(id, variant_id, subscription_id))
