@@ -14,14 +14,17 @@ class Cart:
         })
 
     def create_cart(self):
-        self.carts.append({
+        cart = {
             'id': uuid4(),
             'items': [],
             'totals': {
                 'monthly_price': "",
                 'onetime_price': "",
             }
-        })
+        }
+
+        self.carts.append(cart)
+        return cart
 
     def get_cart_by_id(self, cart_id):
         return next((x for x in self.carts if x["id"] == cart_id), None)
