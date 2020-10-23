@@ -7,5 +7,8 @@ products_model = ProductsModel()
 
 @products_controller.route('/api/products')
 def get_products():
+    """
+    :return: ApiResponse of Product list or empty list
+    """
     products = products_model.get_products()
     return ApiResponse.success(products)
