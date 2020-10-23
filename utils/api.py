@@ -2,7 +2,7 @@ from flask import jsonify
 
 class ApiResponse():
     @classmethod
-    def success(self, data):
+    def success(cls, data):
         return jsonify({
             'status': "success",
             'data': data,
@@ -10,7 +10,7 @@ class ApiResponse():
         })
 
     @classmethod
-    def error(self, message):
+    def error(cls, message):
         return jsonify({
             'status': "error",
             'data': None,
