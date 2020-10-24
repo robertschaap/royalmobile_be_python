@@ -15,7 +15,7 @@ class Cart:
 
     def create_cart(self):
         cart = {
-            'id': uuid4(),
+            'id': str(uuid4()),
             'items': [],
             'totals': {
                 'monthly_price': "",
@@ -38,7 +38,7 @@ class Cart:
 
         if index != None:
             cart = self.carts.pop(index)
-            cart_item["id"] = uuid4()
+            cart_item["id"] = str(uuid4())
             cart_item["totals"] = {
                 'monthly_price': "",
                 'onetime_price': "",
