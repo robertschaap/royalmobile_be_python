@@ -42,7 +42,6 @@ def delete_cart_item(cart_id, item_id):
     :return: ApiResponse of Cart without the deleted item or error
     """
     try:
-        cart = cart_model.delete_cart_item(cart_id, item_id)
         return ApiResponse.success(cart_model.delete_cart_item(cart_id, item_id))
     except:
         return ApiResponse.error('Could not delete cart item')
