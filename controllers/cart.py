@@ -6,21 +6,21 @@ from models.cart import CartModel
 cart_controller = Blueprint('cart_controller', __name__)
 cart_model = CartModel()
 
-@cart_controller.route('/api/cart/<id>')
-def get_cart(id):
+@cart_controller.route('/api/cart/<cart_id>')
+def get_cart(cart_id):
     """
     :param str id: UUIDv4 formatted as string
     :return: ApiResponse of Cart or error
     """
     try:
-        return ApiResponse.success(cart_model.get_cart_by_id(id))
+        return ApiResponse.success(cart_model.get_cart_by_id(cart_id))
     except:
         return ApiResponse.error('Could not get cart')
 
-@cart_controller.route('/api/cart/<id>/item', methods=["PATCH"])
-def add_cart_item(id):
+@cart_controller.route('/api/cart/<cart_id>/item', methods=["PATCH"])
+def add_cart_item(cart_id):
     """
-    :param str id: either UUIDv4 formatted as string or `new`
+    :param str cart_id: either UUIDv4 formatted as string or `new`
     :param str variantId: from request body
     :param str subscriptionId: from request body
     :return: ApiRespons of Cart with the added item or error
@@ -30,7 +30,7 @@ def add_cart_item(id):
     subscription_id = data.get('subscriptionId')
 
     try:
-        return ApiResponse.success(cart_model.add_cart_item(id, variant_id, subscription_id))
+        return ApiResponse.success(cart_model.add_cart_item(cart_id, variant_id, subscription_id))
     except:
         return ApiResponse.error('Could not add cart item')
 
