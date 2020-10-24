@@ -45,6 +45,11 @@ class CartModel:
     def delete_cart_item(self, cart_id, item_id):
         updated_cart = Connection.carts.delete_cart_item(cart_id, item_id)
 
+        if updated_cart == None:
+            raise ValueError("Could not delete cart item")
+
+        return updated_cart
+
     def post_order(self, cart_id):
         # TODO; implement properly once FE is ready for it
         return True
