@@ -36,33 +36,36 @@ class Cart:
     def add_cart_item(self, cart_id, cart_item):
         index = self.get_cart_index(cart_id)
 
-        if index != None:
-            cart = self.carts.pop(index)
-            cart_item["id"] = str(uuid4())
-            cart_item["totals"] = {
-                'monthly_price': "",
-                'onetime_price': "",
-            }
+        if index == None:
+            return None
 
-            cart["items"].append(cart_item)
+        cart = self.carts.pop(index)
+        cart_item["id"] = str(uuid4())
+        cart_item["totals"] = {
+            'monthly_price': "",
+            'onetime_price': "",
+        }
 
-            self.carts.append(cart)
+        cart["items"].append(cart_item)
 
-            return cart
+        self.carts.append(cart)
 
-        return None
+        return cart
 
     def delete_cart_item(self, cart_id, item_id):
+        print(cart_id, item_id, flush=True)
         index = self.get_cart_index(cart_id)
 
-        if index != None:
-            cart = self.carts.pop(index)
-            item_index = next((i for i, x in enumerate(cart["items"]) if x["id"] == item_id), None)
+        if index == None:
+            return None
 
-            if item_index != None:
-                cart["items"].pop(item_index)
-                self.carts.append(cart)
+        cart = self.carts.pop(index)
+        item_index = next((i for i, x in enumerate(cart["items"]) if x["id"] == item_id), None)
 
-                return cart
+        if item_index == None:
+            return None
 
-        return None
+        cart["items"].pop(item_index)
+        self.carts.append(cart)
+
+        return cart
