@@ -20,12 +20,7 @@ class CartModel:
             new_cart = self.create_cart()
             used_cart_id = new_cart.get("id")
 
-        # Split off capacity and colour
-        split = variant_id.split("-")
-        model_id = "-".join(split[:2])
-
-        # TODO: don't return the whole product but only the relevant variant
-        product = Connection.products.get_product_by_model_id(model_id)
+        product = Connection.products.get_product_by_variant_id(variant_id)
         subscription = Connection.subscriptions.get_subscription_by_id(subscription_id)
 
         if product == None or subscription == None:
