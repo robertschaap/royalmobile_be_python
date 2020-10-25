@@ -14,6 +14,17 @@ class Products:
         model_id = "-".join(split[:2])
 
         products = self.get_products()
+        product_by_model = next((x for x in products if x['modelId'] == model_id), None)
 
-        # TODO: don't return the whole product but only the relevant variant
-        return next((x for x in products if x['modelId'] == model_id), None)
+        if product_by_model == None:
+            return None
+
+        product_variants = product_by_model["variants"]
+        selected_variant = next((x for x in product_variants if x["variantId"] == variant_id), None)
+
+        if selected_variant == None:
+            return None
+
+        product_by_model["variants"] = [selected_variant]
+
+        return product_by_model
