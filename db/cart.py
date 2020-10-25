@@ -8,8 +8,8 @@ class Cart:
             'id': "new-cart",
             'items': [],
             'totals': {
-                'monthly_price': "",
-                'onetime_price': "",
+                'monthly_price': "0",
+                'onetime_price': "0",
             }
         })
 
@@ -18,8 +18,8 @@ class Cart:
             'id': str(uuid4()),
             'items': [],
             'totals': {
-                'monthly_price': "",
-                'onetime_price': "",
+                'monthly_price': "0",
+                'onetime_price': "0",
             }
         }
 
@@ -42,11 +42,12 @@ class Cart:
         cart = self.carts.pop(index)
         cart_item["id"] = str(uuid4())
         cart_item["totals"] = {
-            'monthly_price': "",
-            'onetime_price': "",
+            'monthly_price': cart_item["subscription"]["regular_price"],
+            'onetime_price': cart_item["product"]["variants"][0]["discounted_price"],
         }
 
         cart["items"].append(cart_item)
+        cart["totals"] = self.update_cart_totals(cart.get("items"))
 
         self.carts.append(cart)
 
@@ -66,6 +67,22 @@ class Cart:
             return None
 
         cart["items"].pop(item_index)
+        cart["totals"] = self.update_cart_totals(cart.get("items"))
+
         self.carts.append(cart)
 
         return cart
+
+    # TODO: find a better place for this, the DB does not need to know about the calc part
+    def update_cart_totals(self, cart_items):
+        monthly_price = 0
+        onetime_price = 0
+
+        for item in cart_items:
+            monthly_price += int(item.get("totals").get("monthly_price"))
+            onetime_price += int(item.get("totals").get("onetime_price"))
+
+        return {
+            'monthly_price': str(monthly_price),
+            'onetime_price': str(onetime_price),
+        }
