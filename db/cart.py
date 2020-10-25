@@ -27,10 +27,10 @@ class Cart:
         return cart
 
     def get_cart_by_id(self, cart_id):
-        return next((x for x in self.carts if x["id"] == cart_id), None)
+        return next((x for x in self.carts if x.get("id") == cart_id), None)
 
     def get_cart_index(self, cart_id):
-        return next((i for i, x in enumerate(self.carts) if x["id"] == cart_id), None)
+        return next((i for i, x in enumerate(self.carts) if x.get("id") == cart_id), None)
 
 
     def add_cart_item(self, cart_id, cart_item):
@@ -60,7 +60,7 @@ class Cart:
             return None
 
         cart = self.carts.pop(index)
-        item_index = next((i for i, x in enumerate(cart["items"]) if x["id"] == item_id), None)
+        item_index = next((i for i, x in enumerate(cart["items"]) if x.get("id") == item_id), None)
 
         if item_index == None:
             return None
