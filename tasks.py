@@ -15,3 +15,8 @@ def start(c):
 @task
 def buildstubs(c):
     c.run("python3 build_stubs.py")
+
+@task
+def test(c):
+    c.run("pytest")
+    print("Running tests")
