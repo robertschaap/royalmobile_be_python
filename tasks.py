@@ -18,5 +18,5 @@ def buildstubs(c):
 
 @task
 def test(c):
-    c.run("pytest")
+    c.run("pytest -rA")
     print("Running tests")
