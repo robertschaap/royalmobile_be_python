@@ -10,7 +10,7 @@ cart_model = CartModel()
 def get_cart(cart_id):
     """
     :param str id: UUIDv4 formatted as string
-    :return: ApiResponse of Cart or error
+    :return: `ApiResponse` of `Cart` or error
     """
     try:
         return ApiResponse.success(cart_model.get_cart_by_id(cart_id))
@@ -23,7 +23,7 @@ def add_cart_item(cart_id):
     :param str cart_id: either UUIDv4 formatted as string or `new`
     :param str variantId: from request body
     :param str subscriptionId: from request body
-    :return: ApiRespons of Cart with the added item or error
+    :return: `ApiResponse` of `Cart` with the added item or error
     """
     data = request.form or request.get_json(force=True)
     variant_id = data.get('variantId')
@@ -39,7 +39,7 @@ def delete_cart_item(cart_id, item_id):
     """
     :param str cart_id: UUIDv4 formatted as string
     :param str item_id: UUIDv4 formatted as string
-    :return: ApiResponse of Cart without the deleted item or error
+    :return: `ApiResponse` of `Cart` without the deleted item or error
     """
     try:
         return ApiResponse.success(cart_model.delete_cart_item(cart_id, item_id))
