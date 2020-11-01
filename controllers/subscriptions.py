@@ -8,7 +8,7 @@ subscriptions_model = SubscriptionsModel()
 @subscriptions_controller.route('/api/subscriptions')
 def get_subscriptions():
     """
-    :return: ApiResponse of Subscription list or empty list
+    :return: `ApiResponse` of `Subscription` list or empty list
     """
     subscriptions = subscriptions_model.get_subscriptions()
     return ApiResponse.success(subscriptions)
