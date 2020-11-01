@@ -44,29 +44,19 @@ class ProductVariantFactory():
 def create_product(manufacturer, model, model_id):
     product = ProductFactory.create(manufacturer, model, model_id)
 
-    product['variants'].append(ProductVariantFactory.create(product['modelId'], 'green', '#d8efd5', '64gb'))
-    product['variants'].append(ProductVariantFactory.create(product['modelId'], 'white', '#f5f5f7', '64gb'))
-    product['variants'].append(ProductVariantFactory.create(product['modelId'], 'red', '#d82e2e', '64gb'))
-    product['variants'].append(ProductVariantFactory.create(product['modelId'], 'black', '#25212b', '64gb'))
-    product['variants'].append(ProductVariantFactory.create(product['modelId'], 'blue', '#023b63', '64gb'))
+    colors = {
+        'green': "#d8efd5",
+        'white': "#f5f5f7",
+        'red': "#d82e2e",
+        'black': "#25212b",
+        'blue': "#023b63",
+    }
 
-    product['variants'].append(ProductVariantFactory.create(product['modelId'], 'green', '#d8efd5', '128gb'))
-    product['variants'].append(ProductVariantFactory.create(product['modelId'], 'white', '#f5f5f7', '128gb'))
-    product['variants'].append(ProductVariantFactory.create(product['modelId'], 'red', '#d82e2e', '128gb'))
-    product['variants'].append(ProductVariantFactory.create(product['modelId'], 'black', '#25212b', '128gb'))
-    product['variants'].append(ProductVariantFactory.create(product['modelId'], 'blue', '#023b63', '128gb'))
+    capacities = ['64gb', '128gb', '256gb', '512gb']
 
-    product['variants'].append(ProductVariantFactory.create(product['modelId'], 'green', '#d8efd5', '256gb'))
-    product['variants'].append(ProductVariantFactory.create(product['modelId'], 'white', '#f5f5f7', '256gb'))
-    product['variants'].append(ProductVariantFactory.create(product['modelId'], 'red', '#d82e2e', '256gb'))
-    product['variants'].append(ProductVariantFactory.create(product['modelId'], 'black', '#25212b', '256gb'))
-    product['variants'].append(ProductVariantFactory.create(product['modelId'], 'blue', '#023b63', '256gb'))
-
-    product['variants'].append(ProductVariantFactory.create(product['modelId'], 'green', '#d8efd5', '512gb'))
-    product['variants'].append(ProductVariantFactory.create(product['modelId'], 'white', '#f5f5f7', '512gb'))
-    product['variants'].append(ProductVariantFactory.create(product['modelId'], 'red', '#d82e2e', '512gb'))
-    product['variants'].append(ProductVariantFactory.create(product['modelId'], 'black', '#25212b', '512gb'))
-    product['variants'].append(ProductVariantFactory.create(product['modelId'], 'blue', '#023b63', '512gb'))
+    for capacity in capacities:
+        for color, hex_code in colors.items():
+            product['variants'].append(ProductVariantFactory.create(product['modelId'], color, hex_code, capacity))
 
     return product
 
