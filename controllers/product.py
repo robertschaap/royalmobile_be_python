@@ -9,10 +9,10 @@ product_model = ProductModel()
 def get_product(model_id):
     """
     :param str model_id: model ID `manufacturer-device`
-    :return: ApiResponse of Product or error
+    :return: `ApiResponse` of `Product` or error
     """
     try:
         product = product_model.get_product(model_id)
         return ApiResponse.success(product)
     except:
-        return ApiResponse.error("Product could not be found")
+        return ApiResponse.error("Could not get product")
