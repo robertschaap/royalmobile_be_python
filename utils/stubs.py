@@ -2,7 +2,7 @@ import json
 
 def get_products_stub():
     """
-    :return: dictionary of generated products or None if file cannot be accessed
+    :return: list of generated products or None if file cannot be accessed
     """
     try:
         with open("stubs/products.json") as f:
@@ -23,7 +23,7 @@ def create_products_stub(products):
 
 def get_subscriptions_stub():
     """
-    :return: dictionary of generated products or None if file cannot be accessed
+    :return: list of generated subscriptions or None if file cannot be accessed
     """
     try:
         with open("stubs/subscriptions.json") as f:
